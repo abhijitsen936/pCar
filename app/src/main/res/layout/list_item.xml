@@ -3,21 +3,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:descendantFocusability="blocksDescendants"
-    >
+    android:layout_height="150dp"
+    android:background="#D4D7E5"
+    android:descendantFocusability="blocksDescendants">
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="48dp"
         android:layout_height="48dp"
-        app:srcCompat="@drawable/default_car_image"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.044"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.26" />
+        app:layout_constraintVertical_bias="0.26"
+        app:srcCompat="@drawable/default_car_image" />
 
     <TextView
         android:id="@+id/nameTextView"
@@ -49,23 +49,32 @@
 
     <Button
         android:id="@+id/setImageButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="70dp"
+        android:layout_height="32dp"
         android:layout_marginStart="16dp"
+        android:background="@drawable/custom_button"
         android:text="Set Image"
+        android:textSize="10sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.513"
+
         app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/idTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/idTextView"
+        app:layout_constraintVertical_bias="0.384" />
 
     <Button
         android:id="@+id/deleteButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="70dp"
+        android:layout_height="32dp"
+        android:background="@drawable/cb2"
         android:text="Delete"
+        android:textSize="10sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.561"
         app:layout_constraintStart_toEndOf="@+id/setImageButton"
-        app:layout_constraintTop_toBottomOf="@+id/idTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/idTextView"
+        app:layout_constraintVertical_bias="0.384" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

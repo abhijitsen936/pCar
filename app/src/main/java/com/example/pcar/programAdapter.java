@@ -102,8 +102,6 @@ public class programAdapter extends ArrayAdapter<String> {
                     if(r==-1)  Toast.makeText(context, "Faild Deleting", Toast.LENGTH_SHORT).show();
                     else
                         Toast.makeText(getContext(), "delete "+ carMake[position], Toast.LENGTH_SHORT).show();
-//                    MainActivity mc = new MainActivity();
-//                    mc.makeList();
                 }else
                     Toast.makeText(context, "Faild Deleting", Toast.LENGTH_SHORT).show();
             }
@@ -111,21 +109,19 @@ public class programAdapter extends ArrayAdapter<String> {
         holder.setImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 image img= new image((Activity) context, id[position]);
 
-                Bitmap b= img.saveImg(id[position]);
+//                Bitmap b= mg.saveImg(id[position]);
 
-                holder.carPics.setImageBitmap(b);
+//                Bitmap b= img.saveImg(id[position]);
+                 img.saveImg();
+//                holder.carPics.setImageBitmap(b);
 
-                Toast.makeText(getContext(), "Picture saved for "+ id[position], Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getContext(), "Picture saved for "+ id[position], Toast.LENGTH_SHORT).show();
             }
         });
-        convertView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getContext(), "You Clicked:"+carMake[position], Toast.LENGTH_SHORT).show();
-            }
-        });
+
 
         return convertView;
     }
