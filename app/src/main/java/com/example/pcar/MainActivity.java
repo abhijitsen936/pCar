@@ -47,9 +47,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-// Create a layout file called dashboard.xml that contains two Spinner views with ids car_make_spinner and car_model_spinner.
 
-// In your DashboardActivity or DashboardFragment:
 
 public class MainActivity extends AppCompatActivity {
 
@@ -91,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
 //        db2 = dbHelper.getWritableDatabase();
 
 
-        // Create an ArrayList of arrays
+
 
 
         carMakeSpinner = findViewById(R.id.car_make_spinner);
@@ -102,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
         logout=findViewById(R.id.button3);
 
         // Call API #1 to get the list of vehicle makes
-        // ...
+
 
 
         // Create an empty ArrayList to hold the Person objects
@@ -116,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
 // Set the URL of the API endpoint that returns the JSON data
         String url = "https://vpic.nhtsa.dot.gov/api/vehicles/getallmakes?format=json";
 
-// Create a new JsonObjectRequest to retrieve the JSON data from the API
+
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
                 (Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
 
@@ -141,10 +139,9 @@ public class MainActivity extends AppCompatActivity {
 
                             }
 
-                            // At this point, the personList ArrayList contains all of the Person objects
-                            // retrieved from the API.
 
-                            // Once you get the response from API #1, create an ArrayAdapter for the car make Spinner
+
+
                             ArrayAdapter<String> carMakeAdapter = new ArrayAdapter<>(MainActivity.this, android.R.layout.simple_spinner_item, makeList);
                             carMakeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                             carMakeSpinner.setAdapter(carMakeAdapter);
@@ -204,7 +201,7 @@ public class MainActivity extends AppCompatActivity {
                                         modelList.add(modelId + "=" + modelName);
                                     }
 
-                                    // Create an ArrayAdapter using the modelList ArrayList and set it as the adapter for the carModelSpinner
+                                    //  ArrayAdapter using the modelList ArrayList and set it as the adapter for the carModelSpinner
                                     ArrayAdapter<String> carModelAdapter = new ArrayAdapter<>(MainActivity.this, android.R.layout.simple_spinner_item, modelList);
                                     carModelAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                                     carModelSpinner.setAdapter(carModelAdapter);
@@ -317,11 +314,11 @@ public class MainActivity extends AppCompatActivity {
            Toast.makeText(MainActivity.this, "no data found", Toast.LENGTH_SHORT).show();
        }
        while (t.moveToNext()) {
-           String[] dataa = new String[3]; // create a new array of strings
+           String[] dataa = new String[3];
            dataa[0] = t.getString(0);
            dataa[1] = t.getString(1);
            dataa[2] = t.getString(2);
-           arrayListOfArrays.add(dataa); // add the array to the ArrayList
+           arrayListOfArrays.add(dataa);
        }
 
        Cursor r = data.getinfo();
@@ -329,7 +326,7 @@ public class MainActivity extends AppCompatActivity {
            Toast.makeText(MainActivity.this, "no data found", Toast.LENGTH_SHORT).show();
        }
        while (r.moveToNext()){
-           byte[] dataaa; // create a new array of strings
+           byte[] dataaa;
 
            dataaa= r.getBlob(1);
 
